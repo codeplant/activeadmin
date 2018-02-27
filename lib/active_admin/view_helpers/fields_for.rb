@@ -41,7 +41,8 @@ module ActiveAdmin
           when TrueClass, FalseClass
             { k => v }
           else
-            # we encounter this because MongoidSession Object is in the params hash
+            # we encounter this because MongoidSession Object is in the params hash:
+            # I don't know what to do with ActionDispatch::Session::MongoidStore::Session
             #raise "I don't know what to do with #{v.class} params: #{v.inspect}"
           end
         end.compact
