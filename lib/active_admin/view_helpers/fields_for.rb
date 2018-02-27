@@ -41,7 +41,8 @@ module ActiveAdmin
           when TrueClass, FalseClass
             { k => v }
           else
-            raise "I don't know what to do with #{v.class} params: #{v.inspect}"
+            # we encounter this because MongoidSession Object is in the params hash
+            #raise "I don't know what to do with #{v.class} params: #{v.inspect}"
           end
         end.compact
       end
